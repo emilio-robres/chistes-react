@@ -1,14 +1,21 @@
 import React from "react";
+   
+    
 
 
 function Joke (props) {
-    
-    
-      return(
-        <>
-    {props.jokes}
-        </>
 
+      return(
+       
+        <>
+  
+    <p style={{color:"red"
+
+    }}>{props.jokes}</p> 
+     
+
+        
+      </>
       );
     }
 export default Joke;

@@ -2,7 +2,7 @@ import React, { useState,useEffect } from"react";
 import './App.css';
 // import Btn from "./Componentes/Btn.js";
 // import Header from "./Componentes/Header.js";
-import Container from "./Componentes/Container.js";
+
 
 
 
@@ -24,7 +24,7 @@ function AppAsync() {
   return (
     <div>
        {jokes}
-      <Container/>
+     
       
     </div>
   );
