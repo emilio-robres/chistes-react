@@ -1,5 +1,5 @@
 import React from "react";
-
+import Button from "react-bootstrap/Button";
 
 
 function Btn (props) {
@@ -7,12 +7,12 @@ function Btn (props) {
     
       
     return(
-        <>
-            <button style={{
-                margin:"auto"
-            }} onClick={props.makeRequest}>Siguiente chiste</button>
-            
-        </>
+        <div>
+           
+            <Button style={{
+                margin:"150px"
+            }} onClick={props.makeRequest} variant="primary">Siguiente Chiste</Button>
+        </div>
     );
 }
 

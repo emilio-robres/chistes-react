@@ -5,12 +5,13 @@ import Header from "./Componentes/Header.js";
 import Joke from "./Componentes/Joke.js";
 import axios from "axios";
 import styled from "styled-components";
-
+import { FaRegLaugh } from "react-icons/fa";
 
   const StyledDiv = styled.div`
   margin:auto;
   margin-top: 90px;
   font-family:arial;
+  font-size:30px;
   width:1000px;
   height:525px;
   background:#f8f8f8;
@@ -42,7 +43,7 @@ useEffect(() => {
 }, []);
     
     return(
-        <>
+        <div>
         
         
         <header>
@@ -50,18 +51,22 @@ useEffect(() => {
         </header>
         <body>
             
+               
+                    
                 
               
                     <StyledDiv>
                         <Header/>
+                        <FaRegLaugh color="red" size="30px"/> 
+                        
                         <Joke jokes={jokes}/>
                         <Btn makeRequest={makeRequest}/>
                     </StyledDiv>
-          
+                    
             
         </body>
           
-        </>
+        </div>
     )
 };
 export default Appaxios;

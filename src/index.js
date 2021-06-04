@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 
 // import AppAsync from './AppAsync';
 // import App from "./App";
-import AppAxios from "./AppAxios";
-// import Layout from "../Componentes/Layout";
+import Appaxios from "./Appaxios";
+
 
 ReactDOM.render(
-  <>
-    {/* <AppAsync/> */}
-  {/* <App/> */}
-  <AppAxios/>
-  </>,
+  <div>
+          {/* <AppAsync/> */}
+          {/* <App/> */}
+  <Appaxios/>
+  </div>,
   document.getElementById('root')
 );
 
