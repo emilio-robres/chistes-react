@@ -6,6 +6,7 @@ import Joke from "./Componentes/Joke.js";
 import axios from "axios";
 import styled from "styled-components";
 import { FaRegLaugh } from "react-icons/fa";
+import Prueba from "./Prueba";
 
   const StyledDiv = styled.div`
   margin:auto;
@@ -24,6 +25,9 @@ import { FaRegLaugh } from "react-icons/fa";
 
 function Appaxios (){
   const [jokes,setJokes] = useState();
+const [count,setCount]= useState(0);
+console.log(count);
+
 
     async function makeRequest() {
         const config = {
@@ -35,38 +39,49 @@ function Appaxios (){
     
     let response = await axios(config)
     setJokes(response.data.joke); 
+makeRequest()
 }
 
 
 useEffect(() => {
-    makeRequest();
-}, []);
     
-    return(
-        <div>
-        
-        
-        <header>
-            <div id="header">API tiempo </div>
-        </header>
-        <body>
+    
+}, []);
+  
+    
+
+ 
+           
             
-               
-                    
-                
-              
-                    <StyledDiv>
-                        <Header/>
-                        <FaRegLaugh color="red" size="30px"/> 
-                        
-                        <Joke jokes={jokes}/>
-                        <Btn makeRequest={makeRequest}/>
-                    </StyledDiv>
+            if (count== 0)
+            
+            return( <div>
+                <StyledDiv>
+                    <Prueba/>
+                    <Btn makeRequest={makeRequest} count={count} setCount={setCount}/>
+                </StyledDiv>    
+                    </div>)
+            else return(
+        
+                    <div>           
+        
+                            <header>
+                                <div id="header">API tiempo </div>
+                            </header>
+
+                            <body>
+                                <StyledDiv>
+                                    <Prueba/>
+                                    <Header/>
+                                    <FaRegLaugh color="red" size="30px"/> 
+                                    <Joke jokes={jokes}/>
+                                    <Btn makeRequest={makeRequest} count={count} setCount={setCount}/>
+                                </StyledDiv>
                     
             
         </body>
           
-        </div>
+              </div>
     )
 };
 export default Appaxios;

@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom';
 
 // import AppAsync from './AppAsync';
 // import App from "./App";
-import Appaxios from "./Appaxios";
+import AppAxios from "./AppAxios.js";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 ReactDOM.render(
   <div>
           {/* <AppAsync/> */}
           {/* <App/> */}
-  <Appaxios/>
+        <AppAxios/>
   </div>,
   document.getElementById('root')
 );

@@ -4,10 +4,8 @@ import React from "react";
 function Header (){
     return (
     
-    <span 
-    style={{
-            color:"green"
-    }}>
+    <span>
+   
           ¿Chistes para morirse de risa?
     </span>
     )

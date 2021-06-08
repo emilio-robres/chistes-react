@@ -3,15 +3,13 @@ import Button from "react-bootstrap/Button";
 
 
 function Btn (props) {
-    
-    
-      
+   
     return(
         <div>
            
             <Button style={{
                 margin:"150px"
-            }} onClick={props.makeRequest} variant="primary">Siguiente Chiste</Button>
+            }} onClick={() =>{props.makeRequest; props.setCount(props.count+1);} }variant="primary">Siguiente Chiste</Button>
         </div>
     );
 }

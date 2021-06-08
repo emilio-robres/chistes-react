@@ -9,7 +9,7 @@ function Joke (props) {
        
         <div>
   
-    <p style={{color:"black", fontSize:"20px", margin :"40px"
+    <p style={{color:"black", fontSize:"20px", margin :"4git sts0px"
 
     }}>{props.jokes}</p> 
      
