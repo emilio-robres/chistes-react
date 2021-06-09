@@ -9,7 +9,7 @@ function Btn (props) {
            
             <Button style={{
                 margin:"150px"
-            }} onClick={() =>{props.makeRequest; props.setCount(props.count+1);} }variant="primary">Siguiente Chiste</Button>
+            }} onClick={() =>{props.makeRequest(); props.setCount(props.count+1);} }variant="primary">Siguiente Chiste</Button>
         </div>
     );
 }

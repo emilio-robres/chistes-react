@@ -24,9 +24,9 @@ import Prueba from "./Prueba";
 
 
 function Appaxios (){
-  const [jokes,setJokes] = useState();
-const [count,setCount]= useState(0);
-console.log(count);
+    const [jokes,setJokes] = useState();
+    const [count,setCount]= useState(0);
+    console.log(count);
 
 
     async function makeRequest() {
@@ -39,21 +39,21 @@ console.log(count);
     
     let response = await axios(config)
     setJokes(response.data.joke); 
-makeRequest()
+    // makeRequest()
 }
 
 
-useEffect(() => {
+// useEffect(() => {
     
     
-}, []);
+// }, []);
   
     
 
  
            
             
-            if (count== 0)
+            if (count=== 0){
             
             return( <div>
                 <StyledDiv>
@@ -61,7 +61,9 @@ useEffect(() => {
                     <Btn makeRequest={makeRequest} count={count} setCount={setCount}/>
                 </StyledDiv>    
                     </div>)
-            else return(
+            }
+            else {
+                return(
         
                     <div>           
         
@@ -79,9 +81,11 @@ useEffect(() => {
                                 </StyledDiv>
                     
             
-        </body>
+                            </body>
           
-              </div>
-    )
+                    </div>
+            )
+        }       
+    
 };
 export default Appaxios;
