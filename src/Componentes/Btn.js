@@ -1,15 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import Button from "react-bootstrap/Button";
+import { DataContext } from "../Context/DataContext";
 
-
-function Btn (props) {
-   
+function Btn () {
+   const {count,setCount,makeRequest}=useContext (DataContext);
     return(
         <div>
            
             <Button style={{
                 margin:"150px"
-            }} onClick={() =>{props.makeRequest; props.setCount(props.count+1);} }variant="primary">Siguiente Chiste</Button>
+            }} onClick={() =>{makeRequest(); setCount(count+1)} }variant="primary">Siguiente Chiste</Button>
         </div>
     );
 }

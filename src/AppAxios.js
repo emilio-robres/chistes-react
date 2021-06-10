@@ -1,12 +1,14 @@
-import React, { useState,useEffect } from"react";
+import React, {useContext} from"react";
 import "./Styles/index.css";
 import Btn from "./Componentes/Btn.js";
 import Header from "./Componentes/Header.js";
 import Joke from "./Componentes/Joke.js";
-import axios from "axios";
+// import axios from "axios";
 import styled from "styled-components";
 import { FaRegLaugh } from "react-icons/fa";
 import Prueba from "./Prueba";
+import { DataProvider } from "./Context/DataContext";
+import { DataContext}  from "./Context/DataContext";
 
   const StyledDiv = styled.div`
   margin:auto;
@@ -21,49 +23,32 @@ import Prueba from "./Prueba";
   padding:3rem;
 `; 
 
-
+const {count} =useContext (DataContext);
 
 function Appaxios (){
-  const [jokes,setJokes] = useState();
-const [count,setCount]= useState(0);
-console.log(count);
-
-
-    async function makeRequest() {
-        const config = {
-        method: 'get',
-        url: "https://icanhazdadjoke.com",
-        headers: { accept:"application/json" 
-        }   
-    };   
-    
-    let response = await axios(config)
-    setJokes(response.data.joke); 
-makeRequest()
-}
-
-
-useEffect(() => {
-    
-    
-}, []);
   
-    
-
- 
-           
-            
-            if (count== 0)
-            
-            return( <div>
-                <StyledDiv>
-                    <Prueba/>
-                    <Btn makeRequest={makeRequest} count={count} setCount={setCount}/>
-                </StyledDiv>    
-                    </div>)
-            else return(
+         
         
-                    <div>           
+     if (count === 0) 
+        {       
+            return( 
+                <div>  
+                    
+                    <DataProvider>
+                        <div>
+                            <StyledDiv>
+                                <Prueba />
+                                <Btn />
+                            </StyledDiv>    
+                        </div>
+                    </DataProvider> 
+                </div>   
+            )
+        }
+            else {
+                return(
+                    <DataProvider>        
+                        <div>           
         
                             <header>
                                 <div id="header">API tiempo </div>
@@ -74,14 +59,17 @@ useEffect(() => {
                                     <Prueba/>
                                     <Header/>
                                     <FaRegLaugh color="red" size="30px"/> 
-                                    <Joke jokes={jokes}/>
-                                    <Btn makeRequest={makeRequest} count={count} setCount={setCount}/>
+                                    <Joke />
+                                    <Btn />
                                 </StyledDiv>
-                    
-            
-        </body>
+                            </body>
           
-              </div>
-    )
+                    </div>
+            </DataProvider> 
+                          
+           )
+        }     
+    
+    
 };
 export default Appaxios;
